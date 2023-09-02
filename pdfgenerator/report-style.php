@@ -174,7 +174,7 @@ ol > li > b {
 	padding: 32px 8px;
 }
 .report__client-profile__header-heading {
-	color: #2747a9;
+	color: #263c91;
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 38px;
@@ -182,12 +182,12 @@ ol > li > b {
 .report__client-profile__header-sub-heading {
 	font-size: 11px;
 	font-weight: bold;
-	color: #293fa3;
+	color: #263c91;
 }
 .report__client-profile__table-heading {
 	font-size: 11px;
 	font-weight: bold;
-	color: #293fa3;
+	color: #263c91;
 	margin: 8px 0;
 }
 .report__client-profile__table {
@@ -510,6 +510,10 @@ ol > li > b {
 	background-color: #538dd5;
 	color: #fff;
 }
+.report__cyber-program-assessment__table-tr--value-heading th {
+	outline: 1px solid #000;
+	background-color: #8db4e2;
+}
 .report__cyber-program-assessment__table tbody {
 	background-color: #EDEDED;
 }
@@ -527,35 +531,46 @@ ol > li > b {
 .report__cyber-program-assessment__table td img {
 	width: 9px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.report__maturity-improvement-areas__table {
+.report__summary-of-recommeded-actions__table {
 	width: 100%;
 	border-collapse: collapse;
 	border-left: 1px solid #000;
 	border-top: 1px solid #000;
+	font-size: 9px;
+	margin-top: 10px;
 }
-.report__maturity-improvement-areas__table thead {
-	background-color: #9CC2E5;
-}
-.report__maturity-improvement-areas__table td, .report__maturity-improvement-areas__table th {
-	padding: 12px;
+.report__summary-of-recommeded-actions__table td, .report__summary-of-recommeded-actions__table th {
+	padding: 6px;
 	border-right: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
-.report__maturity-improvement-areas__table td:first-child {
-	background-color: #2F5496;
+.report__summary-of-recommeded-actions__table th {
+	background-color: #8db4e2;
 	color: #fff;
+	padding: 4px;
+	white-space: nowrap;
+}
+.report__summary-of-recommeded-actions__table td {
+	color: #263c91;
+	background-color: #d9d9d9;
 	text-align: center;
+}
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(1),
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(2),
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(3) {
+	background-color: #b8cce4;
+}
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(1),
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(2),
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(3),
+.report__summary-of-recommeded-actions__table--maturity-improvement-areas td:nth-child(4) {
+	font-weight: bold;
+}
+.report__summary-of-recommeded-actions__table--how-can-we-help td:nth-child(1) {
+	background-color: #b8cce4;
+}
+.report__summary-of-recommeded-actions__table--how-can-we-help td:nth-child(1),
+.report__summary-of-recommeded-actions__table--how-can-we-help td:nth-child(2) {
+	font-weight: bold;
 }
 </style>
