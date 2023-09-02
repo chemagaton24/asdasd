@@ -42,6 +42,9 @@ ol ul > li {
 ol > li > b {
 	color: #263C91;
 }
+.talign-center {
+	text-align: center;
+}
 .report__intro-page {
 	position: absolute;
 	left: 0;
@@ -238,7 +241,7 @@ ol > li > b {
 	font-size: 13px;
 	font-weight: bold;
 	color: #263c91;
-	margin: 8px 0;
+	padding: 8px;
 }
 .report__table-of-contents-list-sub-item-label-sub {
 	font-size: 11px;
@@ -252,6 +255,34 @@ ol > li > b {
 	color: #366092;
 	padding: 6px 3px;
 }
+.report__table-of-contents-list-sub-item-light-blue-text {
+	background-color: #dce6f1;
+	font-size: 11px;
+	color: #366092;
+	padding: 6px 3px;
+}
+.report__table-of-contents-list-sub-item-grey-text {
+	background-color: #d9d9d9;
+	font-size: 11px;
+	color: #366092;
+	padding: 6px 3px;
+}
+.report__table-of-contents-list-sub-item-blue-text h4,
+.report__table-of-contents-list-sub-item-light-blue-text h4,
+.report__table-of-contents-list-sub-item-grey-text h4 {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+}
+.report__table-of-contents-list-sub-item-blue-text ul,
+.report__table-of-contents-list-sub-item-light-blue-text ul,
+.report__table-of-contents-list-sub-item-grey-text ul {
+	margin: 0;
+	padding: 0 0 0 16px;
+}
+.report__table-of-contents-list-sub-item-chart img {
+	max-width: 100%;
+}
 .report__table-of-contents-list-sub-item-blue-text p:first-child {
 	margin-top: 0;
 }
@@ -261,6 +292,7 @@ ol > li > b {
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table {
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table thead {
 	background-color: #d9d9d9;
@@ -274,15 +306,40 @@ ol > li > b {
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table thead th,
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table tbody td {
 	text-align: left;
-	padding: 2px;
+	padding: 4px;
 	font-size: 11px;
 }
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table tbody td {
 	color: #366092;
 }
-
-
-
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table {
+	width: 100%;
+	border-collapse: collapse;
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+}
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table thead {
+	background-color: #d9d9d9;
+	font-weight: bold;
+	color: #366092;
+}
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table tbody {
+	background-color: #f2f2f2;
+}
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table thead th,
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table tbody td {
+	text-align: left;
+	padding: 4px;
+	font-size: 11px;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table tbody td {
+	padding: 8px 2px;
+}
+.report__table-of-contents-list-sub-item--silversky-service-recommendations-table tbody td {
+	color: #366092;
+}
 .report__overall-cyber-maturity-posture__table {
 	width: 100%;
 	border-spacing: 2px;
@@ -290,45 +347,112 @@ ol > li > b {
 .report__overall-cyber-maturity-posture__table td {
 	background-color: #edecec;
 	padding: 12px;
-	font-size: 16px;
+	font-size: 10px;
 }
 .report__overall-cyber-maturity-posture__table td:first-child {
-	color: #fff;
+	color: #000;
 	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	width: 33%;
+}
+.report__overall-cyber-maturity-posture__table td:last-child {
+	color: #000;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	width: 1%;
 }
 .report__overall-cyber-maturity-posture__table__tr--baseline td:first-child {
-	background-color: #e0eaf5;
+	background-color: #deeaf6;
 }
 .report__overall-cyber-maturity-posture__table__tr--evolving td:first-child {
-	background-color: #c2d5ec;
+	background-color: #bdd6ee;
 }
 .report__overall-cyber-maturity-posture__table__tr--intermediate td:first-child {
-	background-color: #a3c2e1;
+	background-color: #9cc2e5;
 }
 .report__overall-cyber-maturity-posture__table__tr--advance td:first-child {
-	background-color: #4172b0;
+	background-color: #2e74b5;
 }
 .report__overall-cyber-maturity-posture__table__tr--invested td:first-child {
-	background-color: #2b4e76;
+	background-color: #1f4e79;
+}
+.report__maturity-across-core-functional-areas__table {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+.report__maturity-across-core-functional-areas__table thead {
+	background-color: #538dd5;
+}
+.report__maturity-across-core-functional-areas__table th, .report__maturity-across-core-functional-areas__table td {
+	padding: 8px;
+}
+.report__maturity-across-core-functional-areas__table td {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.report__maturity-across-core-functional-areas__table tr:first-child td {
+	border-top: 1px solid #000;
+}
+.report__maturity-across-core-functional-areas__table tr td:first-child {
+	border-right: 1px solid #000;
+	border-top: 0;
+	border-bottom: 0;
+}
+.report__maturity-across-core-functional-areas__table th {
+	color: #fff;
+	font-size: 10px;
+}
+.report__maturity-across-core-functional-areas__table td:first-child {
+	background-color: #dce6f1;
+	text-align: left;
+	color: #366092;
+	width: 60%;
+	font-size: 10px;
+}
+.report__maturity-across-core-functional-areas__table-tr--identify td:first-child {
+	background-color: #dce6f1;
+	color: #000;
+}
+.report__maturity-across-core-functional-areas__table-tr--protect td:first-child {
+	background-color: #b8cce4;
+	color: #000;
+}
+.report__maturity-across-core-functional-areas__table-tr--detect td:first-child {
+	background-color: #95b3d7;
+	color: #000;
+}
+.report__maturity-across-core-functional-areas__table-tr--respond-recover td:first-child {
+	background-color: #366092;
+	color: #000;
 }
 .report__maturity-across-cyber-domains__table {
 	width: 100%;
+	font-size: 12px;
+	border-collapse: collapse;
+}
+.report__maturity-across-cyber-domains__table tbody {
+	outline: 2px solid #fff;
 }
 .report__maturity-across-cyber-domains__table td {
-	padding: 12px;
+	padding: 8px;
 	border: 0;
 }
 .report__maturity-across-cyber-domains__table--identify {
-	background-color: #CCC0DA;
+	background-color: #dce6f1;
 }
 .report__maturity-across-cyber-domains__table--protect {
-	background-color: #00B0F0;
+	background-color: #b8cce4;
 }
 .report__maturity-across-cyber-domains__table--detect {
-	background-color: #FFC000;
+	background-color: #95b3d7;
 }
 .report__maturity-across-cyber-domains__table--respond-recover {
-	background-color: #92D050;
+	background-color: #366092;
 }
 .report__maturity-across-cyber-domains__table-category {
 	text-align: center;
@@ -343,7 +467,7 @@ ol > li > b {
 .report__maturity-across-cyber-domains__table-value {
 	text-align: center;
 	width: 25%;
-	outline: 1px solid #fff;
+	outline: 2px solid #fff;
 }
 .report__maturity-across-cyber-domains__table-value--76-100 {
 	background-color: #63BE7B;
@@ -360,43 +484,61 @@ ol > li > b {
 .report__maturity-across-cyber-domains__table-value--0 {
 	background-color: #F8696B;
 }
-.report__maturity-across-core-functional-areas__table {
-	width: 70%;
-	text-align: center;
-	margin: 0 auto;
+.report__table-of-contents-list-sub-item-capability-table {
+	font-size: 10px;
+	width: 100%;
 	border-collapse: collapse;
-	border-left: 1px solid #000;
-	border-top: 1px solid #000;
+	text-align: center;
 }
-.report__maturity-across-core-functional-areas__table thead {
-	background-color: #9CC2E5;
+.report__table-of-contents-list-sub-item-capability-table td {
+	background-color: #b8cce4;
+	color: #366092;
 }
-.report__maturity-across-core-functional-areas__table th, .report__maturity-across-core-functional-areas__table td {
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
-	padding: 12px;
+.report__table-of-contents-list-sub-item-capability-table td:last-child {
+	background-color: #0f243e;
+	color: #fff;
+	font-size: 16px;
+	padding: 16px;
+	width: 40%;
 }
 .report__cyber-program-assessment__table {
 	width: 100%;
 	border-collapse: collapse;
+	font-size: 10px;
 }
 .report__cyber-program-assessment__table thead {
-	background-color: #263C91;
+	background-color: #538dd5;
 	color: #fff;
 }
 .report__cyber-program-assessment__table tbody {
 	background-color: #EDEDED;
 }
 .report__cyber-program-assessment__table th, .report__cyber-program-assessment__table td {
-	padding: 12px;
-	outline: 3px solid #fff;
+	padding: 8px;
 }
 .report__cyber-program-assessment__table td {
 	text-align: center;
+	outline: 1px solid #000;
 }
 .report__cyber-program-assessment__table td:first-child {
 	text-align: left;
+	background-color: #b8cce4;
 }
+.report__cyber-program-assessment__table td img {
+	width: 9px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .report__maturity-improvement-areas__table {
 	width: 100%;
 	border-collapse: collapse;
