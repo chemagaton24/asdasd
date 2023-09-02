@@ -234,13 +234,13 @@
 				<p>Based on the answers to the SilverSky’s Cyber Assessment your organization’s cyber maturity falls within the:</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-grey-text talign-center">
-				<h4>41%</h4>
+				<h4><?php echo to_whole_num($overall_cyber_maturity_average) ?>%</h4>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text talign-center">
 				<p>percentile, which classifies your organizational cyber maturity within category of</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-grey-text talign-center">
-				<h4>Evolving</h4>
+				<h4 class="ttransform-capitalize"><?php echo $overall_cyber_maturity_average_check ?></h4>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-chart">
 				<img src="./pdfgenerator/charts/overall-cyber-maturity.png" />
@@ -301,14 +301,13 @@
 			</div>
 			<div class="report__table-of-contents-list-sub-item-chart">
 				<img src="./pdfgenerator/charts/maturity-by-domain.png" />
-			</div>
+			</div><br/>
 			<table class="report__maturity-across-core-functional-areas__table">
 				<tbody>
 					<tr>
-						<td>Your organization’s biggest opportunity for increasing cyber maturity is within the
-						functional pillar of:</td>
-						<td>Identify</td>
-						<td>31%</td>
+						<td>Your organization’s biggest opportunity for increasing cyber maturity is within the functional pillar of:</td>
+						<td><span class="ttransform-capitalize"><?php echo $maturity_across_core_functional_areas['lowest_by_key'] ?></span></td>
+						<td><?php echo to_whole_num($maturity_across_core_functional_areas['lowest_by_value']) ?>%</td>
 					</tr>
 				</tbody>
 				<thead>
@@ -321,23 +320,23 @@
 				<tbody>
 					<tr class="report__maturity-across-core-functional-areas__table-tr--identify">
 						<td>Identify</td>
-						<td><?php echo to_whole_num($maturity_across_core_functional_areas_identify) ?>%</td>
-						<td>High</td>
+						<td><?php echo to_whole_num($maturity_across_core_functional_areas['identify']) ?>%</td>
+						<td><?php echo getCapabilityByLabel($maturity_across_core_functional_areas['identify']) ?></td>
 					</tr>
 					<tr class="report__maturity-across-core-functional-areas__table-tr--protect">
 						<td>Protect</td>
-						<td><?php echo to_whole_num($maturity_across_core_functional_areas_protect) ?>%</td>
-						<td>High</td>
+						<td><?php echo to_whole_num($maturity_across_core_functional_areas['protect']) ?>%</td>
+						<td><?php echo getCapabilityByLabel($maturity_across_core_functional_areas['protect']) ?></td>
 					</tr>
 					<tr class="report__maturity-across-core-functional-areas__table-tr--detect">
 						<td>Detect</td>
-						<td><?php echo to_whole_num($maturity_across_core_functional_areas_detect) ?>%</td>
-						<td>High</td>
+						<td><?php echo to_whole_num($maturity_across_core_functional_areas['detect']) ?>%</td>
+						<td><?php echo getCapabilityByLabel($maturity_across_core_functional_areas['detect']) ?></td>
 					</tr>
 					<tr class="report__maturity-across-core-functional-areas__table-tr--respond-recover">
 						<td>Respond/Recover</td>
-						<td><?php echo to_whole_num($maturity_across_core_functional_areas_respond_recover) ?>%</td>
-						<td>High</td>
+						<td><?php echo to_whole_num($maturity_across_core_functional_areas['respond-recover']) ?>%</td>
+						<td><?php echo getCapabilityByLabel($maturity_across_core_functional_areas['respond-recover']) ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -366,53 +365,53 @@
 					<tr>
 						<td rowspan="4" class="report__maturity-across-cyber-domains__table-category"><span>Identify</span></td>
 						<td>Oversight</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($identify_oversight) ?>"><?php echo to_whole_num($identify_oversight) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['oversight']['identify']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['oversight']['identify']) ?>%</td>
 					</tr>
 					<tr>
 						<td>IT Asset Management</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($identify_it_asset_management) ?>"><?php echo to_whole_num($identify_it_asset_management) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['it_asset_management']['identify']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['it_asset_management']['identify']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Risk Assessment</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($identify_risk_assessment) ?>"><?php echo to_whole_num($identify_risk_assessment) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['risk_assessment']['identify']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['risk_assessment']['identify']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Third Party Risk</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($identify_third_party_risk) ?>"><?php echo to_whole_num($identify_third_party_risk) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['third_party_risk']['identify']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['third_party_risk']['identify']) ?>%</td>
 					</tr>
 				</tbody>
 				<tbody class="report__maturity-across-cyber-domains__table--protect">
 					<tr>
 						<td rowspan="3" class="report__maturity-across-cyber-domains__table-category"><span>Protect</span></td>
 						<td>Training/Culture</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($protect_training_culture) ?>"><?php echo to_whole_num($protect_training_culture) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['training_culture']['protect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['training_culture']['protect']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Infrastructure Management</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($protect_infrastructure_management) ?>"><?php echo to_whole_num($protect_infrastructure_management) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['infrastructure_management']['protect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['infrastructure_management']['protect']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Patch Management</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($protect_patch_management) ?>"><?php echo to_whole_num($protect_patch_management) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['patch_management']['protect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['patch_management']['protect']) ?>%</td>
 					</tr>
 				</tbody>
 				<tbody class="report__maturity-across-cyber-domains__table--detect">
 					<tr>
 						<td rowspan="4" class="report__maturity-across-cyber-domains__table-category"><span>Detect</span></td>
 						<td>Threat Intelligence and Information</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($detect_threat_intelligence_and_information) ?>"><?php echo to_whole_num($detect_threat_intelligence_and_information) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Monitoring and Analyzing</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($detect_monitoring_and_analysis) ?>"><?php echo to_whole_num($detect_monitoring_and_analysis) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Threat and Vulnerability Detection</th>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($detect_threat_and_vulnerability_detection) ?>"><?php echo to_whole_num($detect_threat_and_vulnerability_detection) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Event Detection</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($detect_event_detection) ?>"><?php echo to_whole_num($detect_event_detection) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['event_detection']['detect']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['event_detection']['detect']) ?>%</td>
 					</tr>
 				</tbody>
 				<tbody class="report__maturity-across-cyber-domains__table--respond-recover">
@@ -421,15 +420,15 @@
 							<span>Respond &<br/>Recover</span>
 						</td>
 						<td>Planning</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($respond_recover_planning) ?>"><?php echo to_whole_num($respond_recover_planning) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['recover_planning']['respond']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['recover_planning']['respond']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Testing</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($respond_recover_testing) ?>"><?php echo to_whole_num($respond_recover_testing) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['recover_testing']['respond']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['recover_testing']['respond']) ?>%</td>
 					</tr>
 					<tr>
 						<td>Mitigation and Recovery</td>
-						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($respond_recover_response_and_mitigation) ?>"><?php echo to_whole_num($respond_recover_response_and_mitigation) ?>%</td>
+						<td class="report__maturity-across-cyber-domains__table-value report__maturity-across-cyber-domains__table-value--<?php echo val_class_range($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) ?>"><?php echo to_whole_num($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) ?>%</td>
 					</tr>
 				</tbody>
 			</table>
@@ -447,7 +446,7 @@
 				<tr>
 					<td>During the assessment your organization showed a maturity score within the Identify
 					functional cyber capability area of:</td>
-					<td>31%</td>
+					<td><?php echo to_whole_num($maturity_across_core_functional_areas['identify']) ?>%</td>
 				</tr>
 			</table>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
@@ -494,35 +493,35 @@
 				<tbody>
 					<tr>
 						<td>Oversight</td>
-						<td><?php if($identify_capability_oversight == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_oversight == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_oversight == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_oversight == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_oversight == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['oversight']['identify']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['oversight']['identify']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['oversight']['identify']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['oversight']['identify']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['oversight']['identify']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>IT Asset Management</td>
-						<td><?php if($identify_capability_it_asset_management == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_it_asset_management == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_it_asset_management == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_it_asset_management == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_it_asset_management == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['it_asset_management']['identify']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['it_asset_management']['identify']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['it_asset_management']['identify']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['it_asset_management']['identify']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['it_asset_management']['identify']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Risk Assessment</td>
-						<td><?php if($identify_capability_risk_assessment == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_risk_assessment == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_risk_assessment == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_risk_assessment == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_risk_assessment == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['risk_assessment']['identify']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['risk_assessment']['identify']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['risk_assessment']['identify']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['risk_assessment']['identify']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['risk_assessment']['identify']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Third Party Risk</td>
-						<td><?php if($identify_capability_third_party_risk == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_third_party_risk == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_third_party_risk == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_third_party_risk == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($identify_capability_third_party_risk == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['third_party_risk']['identify']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['third_party_risk']['identify']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['third_party_risk']['identify']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['third_party_risk']['identify']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['third_party_risk']['identify']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -540,7 +539,7 @@
 				<tr>
 					<td>During the assessment your organization showed a maturity score within the Protect
 					functional cyber capability area of:</td>
-					<td>61%</td>
+					<td><?php echo to_whole_num($maturity_across_core_functional_areas['protect']) ?>%</td>
 				</tr>
 			</table>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
@@ -583,27 +582,27 @@
 				<tbody>
 					<tr>
 						<td>Training/Culture</td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Infrastructure Management </td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Patch Management</td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -621,7 +620,7 @@
 				<tr>
 					<td>During the assessment your organization showed a maturity score within the Detect
 					functional cyber capability area of:</td>
-					<td>38%</td>
+					<td><?php echo to_whole_num($maturity_across_core_functional_areas['detect']) ?>%</td>
 				</tr>
 			</table>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
@@ -665,35 +664,35 @@
 				<tbody>
 					<tr>
 						<td>Threat Intelligence and Information</td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_intelligence_and_information == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Monitoring and Analyzing</td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_monitoring_and_analysis == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Threat and Vulnerability Detection</td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_threat_and_vulnerability_detection == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Event Detection</td>
-						<td><?php if($detect_capability_event_detection == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_event_detection == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_event_detection == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_event_detection == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($detect_capability_event_detection == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['event_detection']['detect']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['event_detection']['detect']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['event_detection']['detect']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['event_detection']['detect']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['event_detection']['detect']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -711,7 +710,7 @@
 				<tr>
 					<td>During the assessment your organization showed a maturity score within the
 					Response and Recover functional cyber capability areas of:</td>
-					<td>38%</td>
+					<td><?php echo to_whole_num($maturity_across_core_functional_areas['respond-recover']) ?>%</td>
 				</tr>
 			</table>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
@@ -753,27 +752,27 @@
 				<tbody>
 					<tr>
 						<td>Response Planning</td>
-						<td><?php if($respond_recover_capability_planning == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_planning == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_planning == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_planning == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_planning == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_planning']['respond']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_planning']['respond']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_planning']['respond']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_planning']['respond']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_planning']['respond']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Testing</td>
-						<td><?php if($respond_recover_capability_testing == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_testing == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_testing == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_testing == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_testing == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_testing']['respond']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_testing']['respond']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_testing']['respond']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_testing']['respond']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_testing']['respond']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Response and Mitigation</td>
-						<td><?php if($respond_recover_capability_response_and_mitigation == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_response_and_mitigation == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_response_and_mitigation == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_response_and_mitigation == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if($respond_recover_capability_response_and_mitigation == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) == 1): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) == 2): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) == 3): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) == 4): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) == 5): ?><img src="./pdfgenerator/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 				</tbody>
 			</table>

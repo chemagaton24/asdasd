@@ -36,5 +36,21 @@ function getCapability($val) {
 
     return $res;
 }
+function getCapabilityByLabel($val) {
+    $res;
+    if($val >= .82) {
+        $res = 'Very Low';
+    } else if($val >= .62 && $val <= .81) {
+        $res = 'Low';
+    } else if($val >= .42 && $val <= .61) {
+        $res = 'Medium';
+    } else if($val >= .22 && $val <= .41) {
+        $res = 'High';
+    } else {
+        $res = 'Very High';
+    }
+
+    return $res;
+}
 
 ?>

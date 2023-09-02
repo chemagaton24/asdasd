@@ -9,10 +9,10 @@ $qc = new QuickChart(array(
 
 $qc->setApiKey('q-3kgf39bpqfy6lh4ah0bvoz7yj6rqi96l');
 
-$maturity_across_core_functional_areas_identify_whole = to_whole_num($maturity_across_core_functional_areas_identify);
-$maturity_across_core_functional_areas_protect_whole = to_whole_num($maturity_across_core_functional_areas_protect);
-$maturity_across_core_functional_areas_detect_whole = to_whole_num($maturity_across_core_functional_areas_detect);
-$maturity_across_core_functional_areas_respond_recover_whole = to_whole_num($maturity_across_core_functional_areas_respond_recover);
+$maturity_across_core_functional_areas_identify_whole = to_whole_num($maturity_across_core_functional_areas['identify']);
+$maturity_across_core_functional_areas_protect_whole = to_whole_num($maturity_across_core_functional_areas['protect']);
+$maturity_across_core_functional_areas_detect_whole = to_whole_num($maturity_across_core_functional_areas['detect']);
+$maturity_across_core_functional_areas_respond_recover_whole = to_whole_num($maturity_across_core_functional_areas['respond-recover']);
 
 $config = <<<EOD
 {
@@ -21,8 +21,8 @@ $config = <<<EOD
     "datasets": [
       {
         "label": "Identify",
-        "backgroundColor": "rgba(255,192,0)",
-        "borderColor": "rgb(255,192,0)",
+        "backgroundColor": "rgb(220,230,242)",
+        "borderColor": "rgb(220,230,242)",
         "borderWidth": 1,
         "data": [
           $maturity_across_core_functional_areas_identify_whole,
@@ -48,8 +48,8 @@ $config = <<<EOD
       },
       {
         "label": "Protect",
-        "backgroundColor": "rgb(255,0,0)",
-        "borderColor": "rgb(255,0,0)",
+        "backgroundColor": "rgb(185,205,229)",
+        "borderColor": "rgb(185,205,229)",
         "data": [
           0,
           $maturity_across_core_functional_areas_protect_whole,
@@ -93,8 +93,8 @@ $config = <<<EOD
         ],
         "type": "horizontalBar",
         "label": "Detect",
-        "borderColor": "rgb(255,192,0)",
-        "backgroundColor": "rgb(255,192,0)",
+        "borderColor": "rgb(149,179,215)",
+        "backgroundColor": "rgb(149,179,215)",
         "borderWidth": 3,
         "hidden": false
       },
@@ -119,8 +119,8 @@ $config = <<<EOD
         ],
         "type": "horizontalBar",
         "label": "Recover/Respond",
-        "borderColor": "rgb(0,176,80)",
-        "backgroundColor": "rgb(0,176,80)",
+        "borderColor": "rgb(55,96,146)",
+        "backgroundColor": "rgb(55,96,146)",
         "borderWidth": 3,
         "hidden": false
       }

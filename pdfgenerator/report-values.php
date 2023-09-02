@@ -65,37 +65,36 @@ $client_profile['industry'] = 'Education';
 $client_profile['employee_size'] = '251-500';
 
 //Maturity Across Cyber Domains
-$identify_oversight = ($q1 + $q2 + $q3 + $q4) / 4;
-$identify_it_asset_management = ($q5 + $q6 + $q7 + $q8) / 4;
-$identify_risk_assessment = ($q9 + $q10 + $q11) / 3;
-$identify_third_party_risk = ($q42 + $q43 + $q44 + $q45) / 4;
-$protect_training_culture = ($q12 + $q13 + $q14 + $q15) / 4;
-$protect_infrastructure_management = ($q23 + $q24 + $q25 + $q26 + $q27 + $q27) / 6;
-$protect_patch_management = ($q39 + $q40 + $q41) / 3;
-$detect_threat_intelligence_and_information = ($q16 + $q17 + $q18) / 3;
-$detect_monitoring_and_analysis = ($q19 + $q20 + $q21 + $q22) / 4;
-$detect_threat_and_vulnerability_detection = ($q29 + $q30 + $q31 + $q32 + $q33) / 5;
-$detect_event_detection = ($q34 + $q35 + $q36 + $q37 + $q38) / 5;
-$respond_recover_planning = ($q46 + $q47 + $q48 + $q49 + $q50) / 5;
-$respond_recover_testing = ($q51 + $q52 + $q53) / 3;
-$respond_recover_response_and_mitigation = ($q54 + $q55) / 2;
+$maturity_across_cyber_domains['oversight']['identify'] = ($q1 + $q2 + $q3 + $q4) / 4;
+$maturity_across_cyber_domains['it_asset_management']['identify'] = ($q5 + $q6 + $q7 + $q8) / 4;
+$maturity_across_cyber_domains['risk_assessment']['identify'] = ($q9 + $q10 + $q11) / 3;
+$maturity_across_cyber_domains['third_party_risk']['identify'] = ($q42 + $q43 + $q44 + $q45) / 4;
+$maturity_across_cyber_domains['training_culture']['protect'] = ($q12 + $q13 + $q14 + $q15) / 4;
+$maturity_across_cyber_domains['infrastructure_management']['protect'] = ($q23 + $q24 + $q25 + $q26 + $q27 + $q27) / 6;
+$maturity_across_cyber_domains['patch_management']['protect'] = ($q39 + $q40 + $q41) / 3;
+$maturity_across_cyber_domains['threat_intelligence_and_information']['detect'] = ($q16 + $q17 + $q18) / 3;
+$maturity_across_cyber_domains['monitoring_and_analysis']['detect'] = ($q19 + $q20 + $q21 + $q22) / 4;
+$maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect'] = ($q29 + $q30 + $q31 + $q32 + $q33) / 5;
+$maturity_across_cyber_domains['event_detection']['detect'] = ($q34 + $q35 + $q36 + $q37 + $q38) / 5;
+$maturity_across_cyber_domains['recover_planning']['respond'] = ($q46 + $q47 + $q48 + $q49 + $q50) / 5;
+$maturity_across_cyber_domains['recover_testing']['respond'] = ($q51 + $q52 + $q53) / 3;
+$maturity_across_cyber_domains['recover_response_and_mitigation']['respond'] = ($q54 + $q55) / 2;
 
 //Overall Cyber Maturity Average
-$overall_cyber_maturity_average = round(($identify_oversight +
-$identify_it_asset_management +
-$identify_risk_assessment +
-$identify_third_party_risk +
-$protect_training_culture +
-$protect_infrastructure_management +
-$protect_patch_management +
-$detect_threat_intelligence_and_information +
-$detect_monitoring_and_analysis +
-$detect_threat_and_vulnerability_detection +
-$detect_event_detection +
-$respond_recover_planning +
-$respond_recover_testing +
-$respond_recover_response_and_mitigation) / 14, 2);
-
+$overall_cyber_maturity_average = round(($maturity_across_cyber_domains['oversight']['identify'] +
+$maturity_across_cyber_domains['it_asset_management']['identify'] +
+$maturity_across_cyber_domains['risk_assessment']['identify'] +
+$maturity_across_cyber_domains['third_party_risk']['identify'] +
+$maturity_across_cyber_domains['training_culture']['protect'] +
+$maturity_across_cyber_domains['infrastructure_management']['protect'] +
+$maturity_across_cyber_domains['patch_management']['protect'] +
+$maturity_across_cyber_domains['threat_intelligence_and_information']['detect'] +
+$maturity_across_cyber_domains['monitoring_and_analysis']['detect'] +
+$maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect'] +
+$maturity_across_cyber_domains['event_detection']['detect'] +
+$maturity_across_cyber_domains['recover_planning']['respond'] +
+$maturity_across_cyber_domains['recover_testing']['respond'] +
+$maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) / 14, 2);
 
 //Overall Cyber Maturity Check
 $overall_cyber_maturity_average_check = "";
@@ -112,45 +111,32 @@ if($overall_cyber_maturity_average >= .91 && $overall_cyber_maturity_average <= 
 }
 
 //Maturity Across Core Functional Areas
-$maturity_across_core_functional_areas_identify = ($identify_oversight +
-$identify_it_asset_management +
-$identify_risk_assessment +
-$identify_third_party_risk) / 4;
+$maturity_across_core_functional_areas['identify'] = ($maturity_across_cyber_domains['oversight']['identify'] +
+$maturity_across_cyber_domains['it_asset_management']['identify'] +
+$maturity_across_cyber_domains['risk_assessment']['identify'] +
+$maturity_across_cyber_domains['third_party_risk']['identify']) / 4;
 
-$maturity_across_core_functional_areas_protect = ($protect_training_culture +
-$protect_infrastructure_management +
-$protect_patch_management) / 3;
+$maturity_across_core_functional_areas['protect'] = ($maturity_across_cyber_domains['training_culture']['protect'] +
+$maturity_across_cyber_domains['infrastructure_management']['protect'] +
+$maturity_across_cyber_domains['patch_management']['protect']) / 3;
 
-$maturity_across_core_functional_areas_detect = ($detect_threat_intelligence_and_information +
-$detect_monitoring_and_analysis +
-$detect_threat_and_vulnerability_detection +
-$detect_event_detection) / 4;
+$maturity_across_core_functional_areas['detect'] = ($maturity_across_cyber_domains['threat_intelligence_and_information']['detect'] +
+$maturity_across_cyber_domains['monitoring_and_analysis']['detect'] +
+$maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect'] +
+$maturity_across_cyber_domains['event_detection']['detect']) / 4;
 
-$maturity_across_core_functional_areas_respond_recover = ($respond_recover_planning +
-$respond_recover_testing +
-$respond_recover_response_and_mitigation) / 3;
+$maturity_across_core_functional_areas['respond-recover'] = ($maturity_across_cyber_domains['recover_planning']['respond'] +
+$maturity_across_cyber_domains['recover_testing']['respond'] +
+$maturity_across_cyber_domains['recover_response_and_mitigation']['respond']) / 3;
 
-//Identify Capability
-$identify_capability_oversight = getCapability($identify_oversight);
-$identify_capability_it_asset_management = getCapability($identify_it_asset_management);
-$identify_capability_risk_assessment = getCapability($identify_risk_assessment);
-$identify_capability_third_party_risk = getCapability($identify_third_party_risk);
+$maturity_across_core_functional_areas['array'] = ['identify' => $maturity_across_core_functional_areas['identify'],
+'protect' => $maturity_across_core_functional_areas['protect'],
+'detect' => $maturity_across_core_functional_areas['detect'],
+'respond-recover' => $maturity_across_core_functional_areas['respond-recover']];
 
-//Protect Capability
-$protect_capability_training_culture = getCapability($protect_training_culture);
-$protect_capability_infrastructure_management = getCapability($protect_infrastructure_management);
-$protect_capability_patch_management = getCapability($protect_patch_management);
+$maturity_across_core_functional_areas['lowest_by_value'] = min($maturity_across_core_functional_areas['array']);
 
-//Detect Capability
-$detect_capability_threat_intelligence_and_information = getCapability($detect_threat_intelligence_and_information);
-$detect_capability_monitoring_and_analysis = getCapability($detect_monitoring_and_analysis);
-$detect_capability_threat_and_vulnerability_detection = getCapability($detect_threat_and_vulnerability_detection);
-$detect_capability_event_detection = getCapability($detect_event_detection);
-
-//Response and Mitigation
-$respond_recover_capability_planning = getCapability($respond_recover_planning);
-$respond_recover_capability_testing = getCapability($respond_recover_testing);
-$respond_recover_capability_response_and_mitigation = getCapability($respond_recover_response_and_mitigation);
+$maturity_across_core_functional_areas['lowest_by_key'] = min(array_keys($maturity_across_core_functional_areas['array']));
 
 //Why is it important
 $why_is_it_important = array(
@@ -239,19 +225,19 @@ $how_can_we_help = array(
 );
 
 $maturity_imporvement_areas = array(
-    "Oversight" => $identify_oversight,
-    "IT Asset Management" => $identify_it_asset_management,
-    "Risk Assessment" => $identify_risk_assessment,
-    "Third Party Risk" => $identify_third_party_risk,
-    "Training/Culture" => $protect_training_culture,
-    "Infrastructure Management" => $protect_infrastructure_management,
-    "Patch Management" => $protect_patch_management,
-    "Threat Intelligence and Information" => $detect_threat_intelligence_and_information,
-    "Monitoring and Analysis" => $detect_monitoring_and_analysis,
-    "Threat and Vulnerability Detection" => $detect_threat_and_vulnerability_detection,
-    "Event Detection" => $detect_event_detection,
-    "Response Planning" => $respond_recover_planning,
-    "Response Testing" => $respond_recover_testing,
-    "Mitigation and Recovery" => $respond_recover_response_and_mitigation,
+    "Oversight" => $maturity_across_cyber_domains['oversight']['identify'],
+    "IT Asset Management" => $maturity_across_cyber_domains['it_asset_management']['identify'],
+    "Risk Assessment" => $maturity_across_cyber_domains['risk_assessment']['identify'],
+    "Third Party Risk" => $maturity_across_cyber_domains['third_party_risk']['identify'],
+    "Training/Culture" => $maturity_across_cyber_domains['training_culture']['protect'],
+    "Infrastructure Management" => $maturity_across_cyber_domains['infrastructure_management']['protect'],
+    "Patch Management" => $maturity_across_cyber_domains['patch_management']['protect'],
+    "Threat Intelligence and Information" => $maturity_across_cyber_domains['threat_intelligence_and_information']['detect'],
+    "Monitoring and Analysis" => $maturity_across_cyber_domains['monitoring_and_analysis']['detect'],
+    "Threat and Vulnerability Detection" => $maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect'],
+    "Event Detection" => $maturity_across_cyber_domains['event_detection']['detect'],
+    "Response Planning" => $maturity_across_cyber_domains['recover_planning']['respond'],
+    "Response Testing" => $maturity_across_cyber_domains['recover_testing']['respond'],
+    "Mitigation and Recovery" => $maturity_across_cyber_domains['recover_response_and_mitigation']['respond'],
 );
 ?>

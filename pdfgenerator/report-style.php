@@ -45,6 +45,9 @@ ol > li > b {
 .talign-center {
 	text-align: center;
 }
+.ttransform-capitalize {
+	text-transform: capitalize;
+}
 .report__intro-page {
 	position: absolute;
 	left: 0;
