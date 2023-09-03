@@ -292,6 +292,37 @@ ol > li > b {
 .report__table-of-contents-list-sub-item-blue-text p:last-child {
 	margin-bottom: 0;
 }
+.report__table-of-contents-list-sub-item-blue-text--executive-summary {
+	padding-bottom: 0;
+}
+.report__table-of-contents-list-sub-item-blue-text--executive-summary table {
+	transform: translate(3px, 1px);
+}
+.report__table-of-contents-list-sub-item-blue-text-table--executive-summary {
+	width: 100%;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+}
+.report__table-of-contents-list-sub-item-blue-text-table-td-percentie----executive-summary {
+	width: 140px;
+}
+.report__table-of-contents-list-sub-item-blue-text-table--executive-summary-percentile {
+	width: 100%;
+	transform: translateX(6px);
+	text-align: center;
+	font-size: 11px;
+	color: #000;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+.report__table-of-contents-list-sub-item-blue-text-table--executive-summary-percentile td {
+	padding: 4px 8px;
+}
+.report__table-of-contents-list-sub-item-blue-text-table--executive-summary-percentile td:first-child {
+	background-color: #4f81bd;
+}
 .report__table-of-contents-list-sub-item--cyber-domain-maturity-assessment-table {
 	width: 100%;
 	border-collapse: collapse;

@@ -1,5 +1,5 @@
 <?php
-require_once('./pdfgenerator/quickchart/QuickChart.php');
+require_once(dirname(__FILE__).'/quickchart/QuickChart.php');
 
 $qc = new QuickChart(array(
 	'width' => 720,
@@ -348,5 +348,5 @@ EOD;
 $qc->setConfig($config);
 
 // Or write it to a file
-$qc->toFile('./pdfgenerator/charts/maturity-by-industry-comparison.png');
+$qc->toFile(dirname(__FILE__).'/charts/maturity-by-industry-comparison.png');
 ?>
