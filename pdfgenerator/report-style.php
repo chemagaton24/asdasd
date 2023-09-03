@@ -130,6 +130,7 @@ ol > li > b {
 .report__intro-inner {
 	display: inline-block;
 	text-align: left;
+	max-width: 400px;
 }
 .report__intro-subheading {
 	font-size: 16px;

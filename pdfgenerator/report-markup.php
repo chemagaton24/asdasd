@@ -23,8 +23,7 @@
 			<div class="report__intro-inner">
 				<div class="report__intro-subheading">Prepared for:</div>
 				<div class="report__intro-heading">
-					Word of Life<br/>
-					Fellowship Inc.
+					<?php echo $client_profile['company'] ?>
 				</div>
 			</div>
 		</div>
@@ -95,13 +94,13 @@
 			<tbody>
 				<tr>
 					<td class="report__client-profile__table-td-label">Company Name</td>
-					<td colspan="3"><?php echo $client_profile['company_name']; ?></td>
+					<td colspan="3"><?php echo $client_profile['company']; ?></td>
 				</tr>
 				<tr>
 					<td class="report__client-profile__table-td-label">Industry</td>
 					<td><?php echo $client_profile['industry']; ?></td>
 					<td class="report__client-profile__table-td-label">Employee Size</td>
-					<td><?php echo $client_profile['employee_size']; ?></td>
+					<td><?php echo $client_profile['total_employees']; ?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -185,7 +184,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $count = 1; ?>
+					<?php $count = 1 ?>
 					<?php foreach ($domains_data as $key => $data): ?>
 					<?php if(to_whole_num($data['value']) <= 33 && $count <= 5): ?>
 					<tr>
@@ -196,6 +195,11 @@
 					<?php $count++ ?>
 					<?php endif ?>
 					<?php endforeach ?>
+					<?php if($total_lowest_domains === 0): ?>
+					<tr>
+						<td colspan="3"><div class="talign-center">No Result</div></td>
+					</tr>
+					<?php endif ?>
 				</tbody>
 			</table>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
@@ -213,7 +217,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $count = 1; ?>
+					<?php $count = 1 ?>
 					<?php foreach ($domains_data as $key => $data): ?>
 					<?php if(to_whole_num($data['value']) <= 33 && $count <= 5): ?>
 					<tr>
@@ -223,6 +227,11 @@
 					<?php $count++ ?>
 					<?php endif ?>
 					<?php endforeach ?>
+					<?php if($total_lowest_domains === 0): ?>
+					<tr>
+						<td colspan="2"><div class="talign-center">No Result</div></td>
+					</tr>
+					<?php endif ?>
 				</tbody>
 			</table>
 		</div>
@@ -805,7 +814,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $count = 1; ?>
+					<?php $count = 1 ?>
 					<?php foreach ($domains_data as $key => $data): ?>
 					<?php if(to_whole_num($data['value']) <= 33): ?>
 					<tr>
@@ -818,6 +827,11 @@
 					<?php $count++ ?>
 					<?php endif ?>
 					<?php endforeach ?>
+					<?php if($total_lowest_domains === 0): ?>
+					<tr>
+						<td colspan="5"><div class="talign-center">No Result</div></td>
+					</tr>
+					<?php endif ?>
 				</tbody>
 			</table>
 		</div>
@@ -843,7 +857,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $count = 1; ?>
+					<?php $count = 1 ?>
 					<?php foreach ($domains_data as $key => $data): ?>
 					<?php if(to_whole_num($data['value']) <= 33): ?>
 					<tr>
@@ -855,6 +869,11 @@
 					<?php $count++ ?>
 					<?php endif ?>
 					<?php endforeach ?>
+					<?php if($total_lowest_domains === 0): ?>
+					<tr>
+						<td colspan="4"><div class="talign-center">No Result</div></td>
+					</tr>
+					<?php endif ?>
 				</tbody>
 			</table>
 		</div>

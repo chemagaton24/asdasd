@@ -1,13 +1,13 @@
 <?php
-include './pdfgenerator/report-helper.php';
-include './pdfgenerator/report-values.php';
-// include './pdfgenerator/report-generate-overall-cyber-maturity.php';
-// include './pdfgenerator/report-generate-maturity-by-domain.php';
-// include './pdfgenerator/report-generate-maturity-by-industry-comparison.php';
-require_once './pdfgenerator/dompdf/vendor/autoload.php';
+include 'pdfgenerator/report-helper.php';
+include 'pdfgenerator/report-data.php';
+include 'pdfgenerator/report-generate-overall-cyber-maturity.php';
+include 'pdfgenerator/report-generate-maturity-by-domain.php';
+include 'pdfgenerator/report-generate-maturity-by-industry-comparison.php';
+require_once 'pdfgenerator/dompdf/vendor/autoload.php';
 
 ob_start();
-include './pdfgenerator/report-markup.php';
+include 'pdfgenerator/report-markup.php';
 $pdfHTML = ob_get_clean();
 
 use Dompdf\Dompdf;
@@ -20,5 +20,6 @@ $dompdf = new Dompdf($options);
 $dompdf->loadHtml($pdfHTML);
 $dompdf->setPaper('letter', 'portrait');
 $dompdf->render();
-$dompdf->stream('NEXAMPLE', array("Attachment" => false));
+// $dompdf->stream('pdfpreview', array("Attachment" => false));
+file_put_contents(dirname(__FILE__)."/pdfgenerator/tmp/pdf-test-preview.pdf", $dompdf->output());
 ?>
