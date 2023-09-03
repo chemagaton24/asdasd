@@ -278,4 +278,7 @@ $domains_data = [
         "match_service" => "SilverSky MIR, SilverSky ProServices - IR Plan Development",
     ],
 ];
+
+$value = array_column($domains_data, 'value');
+array_multisort($value, SORT_ASC, $domains_data);
 ?>

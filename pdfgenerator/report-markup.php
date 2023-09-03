@@ -587,27 +587,27 @@
 				<tbody>
 					<tr>
 						<td>Training/Culture</td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_intelligence_and_information']['detect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['training_culture']['protect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['training_culture']['protect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['training_culture']['protect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['training_culture']['protect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['training_culture']['protect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Infrastructure Management </td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['monitoring_and_analysis']['detect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['infrastructure_management']['protect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['infrastructure_management']['protect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['infrastructure_management']['protect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['infrastructure_management']['protect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['infrastructure_management']['protect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr>
 						<td>Patch Management</td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
-						<td><?php if(getCapability($maturity_across_cyber_domains['threat_and_vulnerability_detection']['detect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['patch_management']['protect']) == 1): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['patch_management']['protect']) == 2): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['patch_management']['protect']) == 3): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['patch_management']['protect']) == 4): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
+						<td><?php if(getCapability($maturity_across_cyber_domains['patch_management']['protect']) == 5): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 				</tbody>
 			</table>
