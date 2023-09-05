@@ -65,7 +65,7 @@ $q54 = isset($val) ? $val[53] : 1;
 $q55 = isset($val) ? $val[54] : 1;
 
 $client_profile['first_name'] = isset($_GET['first_name']) ? $_GET['first_name'] : 'Matt';
-$client_profile['last_name'] = isset($_GET['last_name']) ? $_GET['first_name'] : 'Hager';
+$client_profile['last_name'] = isset($_GET['last_name']) ? $_GET['last_name'] : 'Hager';
 $client_profile['email'] = isset($_GET['email']) ? $_GET['email'] : 'matth@wol.org';
 $client_profile['job_title'] = isset($_GET['job_title']) ? $_GET['job_title'] : 'Director of IT';
 $client_profile['date_of_survey'] = date('j/n/Y');
