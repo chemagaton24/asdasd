@@ -20,6 +20,6 @@ $dompdf = new Dompdf($options);
 $dompdf->loadHtml($pdfHTML);
 $dompdf->setPaper('letter', 'portrait');
 $dompdf->render();
-// $dompdf->stream('pdfpreview', array("Attachment" => false));
-file_put_contents(dirname(__FILE__)."/pdfgenerator/tmp/pdf-test-preview.pdf", $dompdf->output());
+$dompdf->stream('pdfpreview', array("Attachment" => false));
+// file_put_contents(dirname(__FILE__)."/pdfgenerator/tmp/pdf-test-preview.pdf", $dompdf->output());
 ?>

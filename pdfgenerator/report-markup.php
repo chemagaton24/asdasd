@@ -1,6 +1,9 @@
 <?php include dirname(__FILE__).'/report-style.php'; ?>
 <body>
-<footer class="footer"><span>SilverSky Proprietary and Confidential</span></footer>
+<footer class="footer">
+	<span>SilverSky Proprietary and Confidential to <?php echo $client_profile['company']; ?></span><br/>
+	<span>www.silversky.com</span>
+</footer>
 <main class="report__main">
 	<div class="report__intro-page">
 		<div class="report__intro-bg"></div>
@@ -27,36 +30,36 @@
 				</div>
 			</div>
 		</div>
-		<div class="page__break"></div>
 	</div>
+	<div class="page__break"></div>
 	<div class="report__table-of-contents">
 		<div class="report__table-of-contents-title">Table of Contents</div>
 		<ol class="no-padding">
 			<li><strong>Introduction</strong>
 				<ol>
-					<li>Client Profile</li>
-					<li>Executive Summary</li>
+					<li><span>Client Profile</span><span class="page-num">Page 3</span></li>
+					<li><span>Executive Summary</span><span class="page-num">Page 4</span></li>
 				</ol>
 			</li>
 			<li><strong>Cyber Maturity Assessment</strong>
 				<ol>
-					<li>Overall CMA Posture</li>
-					<li>Maturity Across Cyber Domains</li>
-					<li>Maturity Across Core Pillars</li>
+					<li><span>Overall Cyber Maturity Assessment Posture</span><span class="page-num">Page 5</span></li>
+					<li><span>Maturity Across Cyber Domains</span><span class="page-num">Page 6</span></li>
+					<li><span>Maturity Across Core Pillars</span><span class="page-num">Page 7</span></li>
 				</ol>
 			</li>
 			<li><strong>Cyber Capability Assessment</strong>
 				<ol>
-					<li>Identify Capability Assessment</li>
-					<li>Protect Capability Assessment</li>
-					<li>Detect Capability Assessment</li>
-					<li>Respond/Recover Capability Assessment</li>
+					<li><span>Identify Capability Assessment</span><span class="page-num">Page 8</span></li>
+					<li><span>Protect Capability Assessment</span><span class="page-num">Page 9</span></li>
+					<li><span>Detect Capability Assessment</span><span class="page-num">Page 10</span></li>
+					<li><span>Respond/Recover Capability Assessment</span><span class="page-num">Page 11</span></li>
 				</ol>
 			</li>
 			<li><strong>Summary of Recommended Actions</strong>
 				<ol>
-					<li>Maturity Improvement Areas</li>
-					<li>How SilverSky Can Help</li>
+					<li><span>Maturity Improvement Areas</span><span class="page-num">Page 12</span></li>
+					<li><span>How SilverSky Can Help</span><span class="page-num">Page 13</span></li>
 				</ol>
 			</li>
 		</ol>
@@ -116,23 +119,23 @@
 				1.2 Executive Summary
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The SilverSky Cybersecurity Assessment is based off a combination of several industry frameworks to provide a simple best
+				<p>The SilverSky Cyber Maturity Assessment is based off a combination of several industry frameworks to provide a simple best
 				practice assessment that can measure your cyber program’s maturity. This report helps identify maturity improvement areas and
 				provides recommendations to assist your organization in prioritizing risk mitigation improvements. The report also provides insight
 				into how your cyber maturity measures up to your industry peers and like sized organizations. The following Executive report
-				summarizes the results of your cyber maturity assessment. Detailed sections on these finding below can be found within this
+				summarizes the results of your Cyber Maturity Assessment. Detailed sections on these finding below can be found within this
 				report.</p>
 				<table class="report__table-of-contents-list-sub-item-blue-text-table--executive-summary">
 					<tr>
 						<td>
-							<p>Based on the answers to the SilverSky’s Cyber Assessment your organization falls within the
+							<p>Based on the answers to the SilverSky’s Cyber Maturity Assessment your organization falls within the
 							of Cyber Security Maturity. This classifies your organizational cyber maturity within the phase of</p>
 						</td>
 						<td class="report__table-of-contents-list-sub-item-blue-text-table-td-percentie----executive-summary">
 							<table class="report__table-of-contents-list-sub-item-blue-text-table--executive-summary-percentile">
 								<tr>
 									<td><?php echo to_whole_num($overall_cyber_maturity_average) ?>%</td>
-									<td>percentile</td>
+									<td>percentile.</td>
 								</tr>
 								<tr>
 									<td colspan="2"><span class="ttransform-capitalize"><?php echo $overall_cyber_maturity_average_check ?></span></td>
@@ -171,7 +174,7 @@
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
 				<p>As a second phase of the assessment, SilverSky went a level deeper to measure your organization’s cyber maturity across
-				fourteen (14) common cyber security domains that fall within these four critical core (4) functional cyber security pillars. As a result
+				fourteen (14) common cyber security domains that fall within these four critical core functional cyber security pillars. As a result
 				of this assessment SilverSky identified the top 5 cyber domains that your should invest in to enhance your cyber maturity. Those
 				domains are listed in order of importance from most significant.</p>
 			</div>
@@ -206,8 +209,7 @@
 				SilverSky Service Recommendations
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>Lastly, SilverSky has compiled a list of services that SilverSky provides that maps to your areas of maturity improvement. This list
-				can be used as a strategic roadmap or solutions you should consider to help increase your oranizational Cyber Maturity.</p>
+				<p>Lastly, SilverSky has compiled a list of services that SilverSky provides that map to your areas of maturity improvement. This list can be used as a strategic roadmap or solutions you should consider to help increase your organizational cyber maturity.</p>
 			</div>
 			<table class="report__table-of-contents-list-sub-item--silversky-service-recommendations-table">
 				<thead>
@@ -268,7 +270,7 @@
 					</tr>
 					<tr class="report__overall-cyber-maturity-posture__table__tr--evolving">
 						<td>Evolving</td>
-						<td>Evolving maturity is characterized as those organizations that have begun to invested in Cyber security and may show strong maturity in one or more cyber domains but are still in need of maturing across multiple cyber domains. </td>
+						<td>Evolving maturity is characterized as those organizations that have begun to invested in cyber security and may show strong maturity in one or more cyber domains but are still in need of maturing across multiple cyber domains. </td>
 						<td><?php if($overall_cyber_maturity_average_check == 'evolving'): ?><img src="<?php echo dirname(__FILE__) ?>/assets/x.png" width="16" /><?php endif; ?></td>
 					</tr>
 					<tr class="report__overall-cyber-maturity-posture__table__tr--intermediate">
@@ -299,12 +301,12 @@
 				2.2 Maturity Across Core Functional Areas
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The core functional assessment looks at your organizational cyber maturity across four (4) functional areas that help make up a cyber program.
-				Those functional areas are comprised of the Identify, Protect, Detect and Response/Recovery phases of a cyber program. These four
+				<p>The core functional assessment looks at your organizational cyber maturity across four functional areas that help make up a cyber program.
+				Those functional areas are comprised of the Identify, Protect, Detect and Response/Recovery phases. These four
 				functions, when combined, provide the key program areas for building out a comprehensive cyber program.</p>
 				<ul>
 					<li><strong>Identify</strong> – Assessment of the Organization’s ability to develop, understand and manage cyber security risk</li>
-					<li><strong>Protect</strong> - Assessment of the Organization’s ability to develop and implement appropriate safeguards to ensure</li>
+					<li><strong>Protect</strong> - Assessment of the Organization’s ability to develop and implement appropriate safeguards to ensure protection controls</li>
 					<li><strong>Detect</strong> – Assessment of the Organization’s ability to develop processes to identify the occurrence of a cybersecurity event</li>
 					<li><strong>Respond/Recover</strong> - Assessment of the Organization’s ability to develop processes to take action and restore from a cybersecurity event</li>
 				</ul>
@@ -366,12 +368,12 @@
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
 				<br/><br/>
-				<p>Below is a single view of all capabilities covered in this assessment and their results. SilverSky measured your organization’s
+				<p>Below is a single view of all the capabilities covered in this assessment and their results. SilverSky measured your organization’s
 				<p>cyber maturity across fourteen (14) common domains and four (4) key pillars or functions.</p>
 				The questions represented in this survey are SilverSky’s representation of best practices relating to each of these domains and
 				pillars and will assist in providing strategic guidance on where to focus time and energy in building additional cyber capabilities.
 				The red color in the chart represents areas of low or no maturity, orange represents areas where some or weak maturity exists
-				and green reresents areas of hightened maturity.</p>
+				and green represents areas of heightened maturity.</p>
 				<br/><br/><br/>
 			</div>
 			<table class="report__maturity-across-cyber-domains__table">
@@ -467,12 +469,10 @@
 				Why is the Identify Functional Program Area important to a cyber program?
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The Identify capability in cybersecurity is ciritical to development of an organization's understanding of cybersecurity risks to systems, people,
-				assets, data, and capabilities. Understanding the business context, the resources that support critical functions, and the related cybersecurity
-				risks enables an organization to focus and prioritize its efforts, consistent with its risk management strategy and business needs.</p>
+				<p>The Identify capability in cybersecurity is critical to the development of an organization's understanding of cybersecurity risks to systems, people, assets, data, and capabilities. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enables an organization to focus and prioritize its efforts, consistent with its risk management strategy and business needs.</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
-				The Identify Category is comprised of four domains as part of SilverSky’s cyber maturity assessment:
+				The Identify Category is comprised of four capabilities as part of SilverSky’s Cyber Maturity Assessment:
 			</div>
 			<div class="report__table-of-contents-list-sub-item-light-blue-text">
 				<br/><br/>
@@ -560,12 +560,10 @@
 				Why is the Protect Functional Program Area important to a cyber program?
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The protect capability area is a critical component of a cyber program because it measures the organizations ability to proactively protect
-				organizational assests from cyber attacks on critical infrastructure. The protect function measures the orginazational ability to limit or contain the
-				impact of a potential cybersecurity event by having proactive measures in place.</p>
+				<p>The Protect capability area is a critical component of a cyber program because it measures the organization's ability to proactively protect organizational assets from cyber attacks on critical infrastructure. The protect function measures the organizational ability to limit or contain the impact of a potential cybersecurity event by having proactive measures in place.</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
-				The Identify Category is comprised of four domains as part of SilverSky’s cyber maturity assessment:
+				The Identify Category is comprised of three capabilities as part of SilverSky’s Cyber Maturity Assessment:
 			</div>
 			<div class="report__table-of-contents-list-sub-item-light-blue-text">
 				<br/><br/>
@@ -576,7 +574,7 @@
 				Measures the organization’s maturity around the ability to manage and maintain information system components consistent with policies and
 				procedures.<br/><br/>
 				<strong>Patch Management</strong>
-				Measures the organization's ability to patch systems from potential threats and vulnerabilities that can expose systems to comprimise.
+				Measures the organization's ability to patch systems from potential threats and vulnerabilities that can expose systems to compromise.
 				<br/><br/><br/>
 			</div>
 			<table class="report__cyber-program-assessment__table">
@@ -641,12 +639,10 @@
 				Why is the Detect Functional Program Area important to a cyber program?
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The Detect Function is critical to a cyber security program since it involves the processes and procedure necessary to timely discover
-				cybersecurity events within a organization. The quicker potential issues are detected will drastically reduce the overall impact a cyber event will
-				have across an organization.</p>
+				<p>The Detect function is critical to a cyber security program since it involves the processes and procedures necessary for the timely discovery of cybersecurity events within an organization.  The quicker potential issues are detected will drastically reduce the overall impact a cyber event will have across an organization.</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
-				The Detect Category is comprised of four domains as part of SilverSky’s cyber maturity assessment:
+				The Detect Category is comprised of four areas as part of SilverSky’s Cyber Maturity Assessment:
 			</div>
 			<div class="report__table-of-contents-list-sub-item-light-blue-text">
 				<br/><br/>
@@ -731,12 +727,10 @@
 				Why is the Response and Recovery Functional Program Area important to a cyber program?
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>The response and recover elements play a key role in a cyber program. The Respond capability ensure organizations have implemented the
-				appropriate procedure that will allow them to take action regarding a detected cybersecurity incident. While the Recover Function examines
-				the organizations capability to resume operations after a potential cybersecurity incident.</p>
+				<p>The Respond and Recover elements play a key role in a cyber program. The Respond capability ensures organizations have implemented the appropriate procedure that will allow them to take action regarding a detected cybersecurity incident. While the Recover Function examines the organizations capability to resume operations after a potential cybersecurity incident.</p>
 			</div>
 			<div class="report__table-of-contents-list-sub-item-label-sub">
-				The Respond and Recovery Categories are comprised of three domains as part of SilverSky’s cyber maturity assessment:
+				The Respond and Recovery Categories are comprised of three capabilities as part of SilverSky’s Cyber Maturity Assessment:
 			</div>
 			<div class="report__table-of-contents-list-sub-item-light-blue-text">
 				<br/><br/>
@@ -794,7 +788,7 @@
 		<div class="page__break"></div>
 		<div class="report__table-of-contents-list-root-item">
 			<div class="report__table-of-contents-list-root-item-heading">Cyber Maturity Assessment</div>
-			<div class="report__table-of-contents-list-root-item-label">4. Summary of Recommeded Actions</div>
+			<div class="report__table-of-contents-list-root-item-label">4. Summary of Recommended Actions</div>
 		</div>
 		<div class="report__table-of-contents-list-sub-item">
 			<div class="report__table-of-contents-list-sub-item-label">
@@ -838,14 +832,14 @@
 		<div class="page__break"></div>
 		<div class="report__table-of-contents-list-root-item">
 			<div class="report__table-of-contents-list-root-item-heading">Cyber Maturity Assessment</div>
-			<div class="report__table-of-contents-list-root-item-label">4. Summary of Recommeded Actions</div>
+			<div class="report__table-of-contents-list-root-item-label">4. Summary of Recommended Actions</div>
 		</div>
 		<div class="report__table-of-contents-list-sub-item">
 			<div class="report__table-of-contents-list-sub-item-label">
 				4.2 How SilverSky Can Help
 			</div>
 			<div class="report__table-of-contents-list-sub-item-blue-text">
-				<p>Based on your top maturity improvement areas, SilverSky has generated a list of the top service offerings that we offer that would help you enhance your CyberMaturity. These recommendations are list in the order of important to your cyber program.</p>
+				<p>Based on your top maturity improvement areas, SilverSky has generated a list of the top service offerings that we offer that would help you enhance your Cyber Maturity. These recommendations are listed in the order of important to your cyber program.</p>
 			</div>
 			<table class="report__summary-of-recommeded-actions__table report__summary-of-recommeded-actions__table--how-can-we-help">
 				<thead>

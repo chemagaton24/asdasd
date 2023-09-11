@@ -1,6 +1,5 @@
 <style>
-@page { margin: 68px 68px 32px; }
-@page :first { margin: 27px 18px; }
+@page { margin: 27px 18px; }
 img {
 	image-rendering: optimize-contrast;
 	image-rendering: crisp-edges;
@@ -60,21 +59,22 @@ ol > li > b {
 .footer {
 	position: fixed; 
 	z-index: 0;
-	bottom: 0px; 
+	bottom: -5px; 
 	left: 0px; 
 	width: 100%;
 	text-align: center;
+	line-height: 12px;
 }
 .footer span {
 	font-size: 9px;
 	text-transform: uppercase;
 }
-.footer:before {
+.footer:after {
 	content: "Page ".counter(page);
 	display: block;
 	position: absolute;
-	right: 34px;
-	top: 0;
+	right: 0;
+	top: 5px;
 	font-size: 12px;
 }
 .page__break { page-break-before: always; }
@@ -88,7 +88,7 @@ ol > li > b {
 	top: 0;
 	z-index: 1;
 	width: 100%;
-	height: 100%;
+	height: 95%;
 	background-image: url('<?php echo dirname(__FILE__) ?>/assets/intro-bg-gradient.jpg');
 }
 .report__intro-header {
@@ -169,6 +169,13 @@ ol > li > b {
 }
 .report__table-of-contents > ol > li > ol {
 	font-size: 18px;
+}
+.report__table-of-contents > ol > li > ol > li {
+	position: relative;
+}
+.report__table-of-contents > ol > li > ol > li .page-num {
+	position: absolute;
+	right: 0;
 }
 .report__table-of-contents > ol > li > ol > li:before {
 	font-weight: normal;
