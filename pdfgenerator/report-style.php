@@ -615,4 +615,43 @@ ol > li > b {
 .report__summary-of-recommeded-actions__table--how-can-we-help td:nth-child(2) {
 	font-weight: bold;
 }
+.last-page {
+	position: relative;
+	width: 100%;
+	height: 96%;
+	background-image: url('<?php echo dirname(__FILE__) ?>/assets/last-page-bg.jpg');
+	background-size: cover;
+}
+.last-page .logo {
+	width: 400px;
+	margin-bottom: -40px;
+}
+.last-page .inner {
+	text-align: center;
+	padding-top: 200px;
+	margin: 0 auto;
+}
+.last-page .blue-text {
+	color: #00a3ff;
+	font-size: 32px;
+	font-style: italic;
+}
+.last-page .thank-you-text {
+	color: #fff;
+	font-size: 32px;
+	margin-bottom: 24px;
+}
+.last-page .contact-links {
+	margin-bottom: 24px;
+}
+.last-page .contact-links a {
+	color: #00a3ff;
+	margin: 0 4px;
+}
+.last-page .social-icon {
+	width: 28px;
+	margin: 0 4px;
+	text-decoration: none;
+	font-size: 0px;
+}
 </style>

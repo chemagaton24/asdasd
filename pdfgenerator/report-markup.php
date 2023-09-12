@@ -871,6 +871,25 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="page__break"></div>
+		<div class="last-page">
+			<div class="inner">
+				<img src="<?php echo dirname(__FILE__) ?>/assets/logo.png" class="logo" />
+				<div class="blue-text">Change the Rules of Engagement</div>
+				<div class="contact-links">
+					<div class="thank-you-text">Thank you</div>
+					<a href="https://silversky.com/">www.silversky.com</a>
+					<a href = "mailto: learn@silversky.com">learn@silversky.com</a>
+					<a href = "tel: 800-234-2175">800-234-2175</a>
+					
+				</div>
+				<div class="social-icons">
+					<a href="https://www.linkedin.com/company/silversky/"><img src="<?php echo dirname(__FILE__) ?>/assets/linkedin.png" class="social-icon" /></a>
+					<a href="https://twitter.com/silversky"><img src="<?php echo dirname(__FILE__) ?>/assets/twitter.png" class="social-icon" /></a>
+					<a href="https://www.youtube.com/user/SilverSkyvideos"><img src="<?php echo dirname(__FILE__) ?>/assets/youtube.png" class="social-icon" /></a>
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
 </body>
