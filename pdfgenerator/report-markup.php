@@ -105,6 +105,11 @@
 					<td class="report__client-profile__table-td-label">Employee Size</td>
 					<td><?php echo $client_profile['total_employees']; ?></td>
 				</tr>
+				<tr>
+					<td class="report__client-profile__table-td-label">Location</td>
+					<td><?php echo $client_profile['location']; ?></td>
+					<td class="report__client-profile__table-td-blank" colspan="2"></td>
+				</tr>
 			</tbody>
 		</table>
 		<div class="page__break"></div>

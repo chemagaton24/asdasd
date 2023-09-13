@@ -204,6 +204,7 @@ ol > li > b {
 .report__client-profile__table {
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 .report__client-profile tbody {
 	border-top: 4px solid #366092;

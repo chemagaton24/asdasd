@@ -70,6 +70,7 @@ $client_profile['email'] = isset($_GET['email']) ? $_GET['email'] : 'matth@wol.o
 $client_profile['job_title'] = isset($_GET['job_title']) ? $_GET['job_title'] : 'Director of IT';
 $client_profile['date_of_survey'] = date('F j, Y');
 $client_profile['company'] = isset($_GET['company']) ? $_GET['company'] : 'Word of Life Fellowship Inc.';
+$client_profile['location'] = isset($_GET['location']) ? $_GET['location'] : 'New York';
 $client_profile['industry'] = isset($_GET['industry']) ? $_GET['industry'] : 'Education';
 $client_profile['total_employees'] = isset($_GET['total_employees']) ? $_GET['total_employees'] : '251-500';
 
